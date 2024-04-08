@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Detection Data</title>
+    <style>
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Object Detection Data</h1>
+
+    <!-- Check if objects list is empty -->
+    {% if objects %}
+        <!-- Table for displaying object data -->
+        <table id="object-table">
+            <tr>
+                <th>Index</th>
+                <th>Timestamp</th>
+                <th>Name</th>
+                <th>Distance</th>
+            </tr>
+            {% for obj in objects %}
+            <tr>
+                <td>{{ obj.index }}</td>
+                <td>{{ obj.timestamp }}</td>
+                <td>{{ obj.name }}</td>
+                <td>{{ obj.distance }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No data present</p>
+    {% endif %}
+
+    <script>
+        // Function to fetch data from Firebase and update the table
+        function fetchData() {
+            fetch("/")
+            .then(response => response.json())
+            .then(data => {
+                // Clear existing table rows
+                const table = document.getElementById("object-table");
+                table.innerHTML = `
+                    <tr>
+                        <th>Index</th>
+                        <th>Timestamp</th>
+                        <th>Name</th>
+                        <th>Distance</th>
+                    </tr>
+                `;
+                // Add new table rows with fetched data
+                data.forEach(obj => {
+                    table.innerHTML += `
+                        <tr>
+                            <td>${obj.index}</td>
+                            <td>${obj.timestamp}</td>
+                            <td>${obj.name}</td>
+                            <td>${obj.distance}</td>
+                        </tr>
+                    `;
+                });
+            });
+        }
+
+        // Fetch data initially
+        fetchData();
+        // Fetch data every 5 seconds
+        setInterval(fetchData, 3000);
+    </script>
+</body>
+</html>
