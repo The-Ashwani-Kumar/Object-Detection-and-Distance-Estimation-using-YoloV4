@@ -1,41 +1,43 @@
 # Object-Detection-and-Distance-Estimation-using-YoloV4
 
 This repository contains an IoT-based object detection and distance estimation system using YOLOv4 (You Only Look Once). The system is divided into two main parts:
-1. ### Front-end: Displays detected objects and estimated distances using a Flask application that fetches data from a Firebase Firestore database.
-2. ### Back-end: Detects objects in real-time and estimates their distance using the YOLOv4 model. The back-end also updates the Firestore database and triggers alerts if objects are too close.
+1. **Front-end:** Displays detected objects and estimated distances using a Flask application that fetches data from a Firebase Firestore database.
+2. **Back-end:** Detects objects in real-time and estimates their distance using the YOLOv4 model. The back-end also updates the Firestore database and triggers alerts if objects are too close.
 
 ## Table of Contents
-Features
-Technologies Used
-Setup Instructions
-Front-end Setup
-Back-end Setup
-How It Works
-Screenshots
-License
-Features
-Real-time object detection using YOLOv4.
-Distance estimation of detected objects based on known object sizes.
-Alerts when objects are detected within a predefined distance threshold.
-Firebase integration for storing and displaying detection data.
-Flask front-end to visualize detected objects and their distances.
-Technologies Used
-Python: Main programming language.
-Flask: Web framework for the front-end.
-YOLOv4: Object detection algorithm.
-OpenCV: Image processing library.
-Firebase Firestore: Cloud database for storing detected object data.
-Firebase Admin SDK: For accessing Firestore in Python.
-Tkinter: GUI for running the back-end application.
-Pygame: For playing alert sounds.
-Setup Instructions
-Front-end Setup
-Install the required packages:
+1. Features
+2. Technologies Used
+3. Setup Instructions
+4. Front-end Setup
+5. Back-end Setup
+6. How It Works
+   
+## Features
+- Real-time object detection using YOLOv4.
+- Distance estimation of detected objects based on known object sizes.
+- Alerts when objects are detected within a predefined distance threshold.
+- Firebase integration for storing and displaying detection data.
+- Flask front-end to visualize detected objects and their distances.
 
-bash
+## Technologies Used
+- Python: Main programming language.
+- Flask: Web framework for the front-end.
+- YOLOv4: Object detection algorithm.
+- OpenCV: Image processing library.
+- Firebase Firestore: Cloud database for storing detected object data.
+- Firebase Admin SDK: For accessing Firestore in Python.
+- Tkinter: GUI for running the back-end application.
+- Pygame: For playing alert sounds.
+
+## Setup Instructions
+### Front-end Setup
+1. Install the required packages:
+
+```bash
 Copy code
 pip install flask firebase-admin
 Configure Firebase:
+```
 
 Add your Firebase credentials in chandu_key.json (this should contain your Firebase admin SDK key).
 Make sure the Firestore database is properly configured with a collection named Object Detection and Distance Estimation.
