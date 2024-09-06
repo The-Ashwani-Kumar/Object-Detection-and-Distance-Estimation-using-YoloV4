@@ -31,24 +31,31 @@ This repository contains an IoT-based object detection and distance estimation s
 
 ## Setup Instructions
 ### Front-end Setup
-1. Install the required packages:
-   
-```pip install flask firebase-admin```
+1. Install the required packages:  
+```
+pip install flask firebase-admin
+```
 3. Configure Firebase:
 - Add your Firebase credentials in chandu_key.json (this should contain your Firebase admin SDK key).
 - Make sure the Firestore database is properly configured with a collection named `Object Detection and Distance Estimation.`
 3. Run the Flask App:
-```python front_end.py```
+```
+python front_end.py
+```
 
 ### Back-end Setup
 1. Install the required packages:
-```pip install flask opencv-python numpy firebase-admin pygame pillow```
-2. Download YOLOv4 Model:
+```
+pip install flask opencv-python numpy firebase-admin pygame pillow
+```
+3. Download YOLOv4 Model:
 - Place the yolov4-tiny.weights and yolov4-tiny.cfg files in the root directory.
 3. Configure Firebase:
 - Add your Firebase credentials in chandu_key.json.
 4. Run the Back-end Application:
-```python main.py```
+```
+python main.py
+```
 
 ### Additional Files
 - Classes File: The classes.txt file contains the names of objects that YOLOv4 can detect. It should be located in the root directory.
