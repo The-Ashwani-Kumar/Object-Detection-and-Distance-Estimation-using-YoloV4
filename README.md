@@ -1,10 +1,10 @@
 # Object-Detection-and-Distance-Estimation-using-YoloV4
 
 This repository contains an IoT-based object detection and distance estimation system using YOLOv4 (You Only Look Once). The system is divided into two main parts:
+1. ### Front-end: Displays detected objects and estimated distances using a Flask application that fetches data from a Firebase Firestore database.
+2. ### Back-end: Detects objects in real-time and estimates their distance using the YOLOv4 model. The back-end also updates the Firestore database and triggers alerts if objects are too close.
 
-- ## Front-end: Displays detected objects and estimated distances using a Flask application that fetches data from a Firebase Firestore database.
-- ## Back-end: Detects objects in real-time and estimates their distance using the YOLOv4 model. The back-end also updates the Firestore database and triggers alerts if objects are too close.
-Table of Contents
+## Table of Contents
 Features
 Technologies Used
 Setup Instructions
