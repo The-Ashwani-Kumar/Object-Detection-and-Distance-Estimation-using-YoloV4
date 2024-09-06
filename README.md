@@ -32,8 +32,9 @@ This repository contains an IoT-based object detection and distance estimation s
 ## Setup Instructions
 ### Front-end Setup
 1. Install the required packages:
+   
 `pip install flask firebase-admin`
-2. Configure Firebase:
+3. Configure Firebase:
 - Add your Firebase credentials in chandu_key.json (this should contain your Firebase admin SDK key).
 - Make sure the Firestore database is properly configured with a collection named `Object Detection and Distance Estimation.`
 3. Run the Flask App:
